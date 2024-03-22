@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Regístrate en DevStagram
+    Sign-up into DevStagram
 @endsection
 
 @section('content')
@@ -14,8 +14,8 @@
             <form action="{{ route('register') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
-                    <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Tu nombre"
+                    <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your fullname"
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                         value="{{ old('name') }}" />
                     @error('name')
@@ -23,8 +23,8 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Nombre de usuario</label>
-                    <input type="text" id="username" name="username" placeholder="Tu nombre de usuario"
+                    <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Your username"
                         class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
                         value="{{ old('username') }}" />
                     @error('username')
@@ -32,8 +32,8 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico"
+                    <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com"
                         class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
                         value="{{ old('email') }}" />
                     @error('email')
@@ -41,21 +41,21 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Contraseña</label>
-                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña"
+                    <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password"
                         class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror" />
                     @error('password')
                         <p class="bg-red-500 text-white my-2 rounded-md p-2">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Confirmar
-                        contraseña</label>
+                    <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Confirm
+                        password</label>
                     <input type="password" id="password_confirmation" name="password_confirmation"
-                        placeholder="Confirma tu contraseña" class="border p-3 w-full rounded-lg" />
+                        placeholder="Confirm your password" class="border p-3 w-full rounded-lg" />
                 </div>
 
-                <input type="submit" value="Crear cuenta"
+                <input type="submit" value="Register"
                     class="bg-sky-600 hover:bg-sky-700 cursor-pointer uppercase font-bold text-white w-full rounded-lg p-3" />
             </form>
         </div>
