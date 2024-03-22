@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title')
-    Tu cuenta
+    @if (auth()->user()->username == $user->username)
+        Your account
+    @endif
 @endsection
 @section('content')
     <div class="flex justify-center">
@@ -9,7 +11,7 @@
                 <img src="{{ asset('img/usuario.svg') }}" alt="User image">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5">
-                <p class="text-gray-700 text-2xl">{{ auth()->user()->username }}</p>
+                <p class="text-gray-700 text-2xl">{{ $user->username }}</p>
             </div>
         </div>
     </div>
